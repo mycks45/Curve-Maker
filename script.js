@@ -58,6 +58,24 @@ function isFloat(n){
 function copyCss(){
     var css = document.getElementById('css-to-copy').textContent
     navigator.clipboard.writeText(css);
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "100",
+        "timeOut": "500",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+      }
+    toastr.success('Copied!!')
 }
 
 function orientationChange(val){
