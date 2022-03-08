@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <title>Hello, world!</title>
+        <script src="script.js" defer></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+
+            <!-- curve display -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="curve-div" id="curve-division" style="background-color: antiquewhite;">
+                        <div id="curve-element" class="curve-elm"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- option and controls section  -->
+            <div class="row">
+                <!-- controls -->
+                <div class="col-8 bg-dark" style="height: 30vh;">
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <label class="text-white form-label" for="position">Position</label>
+                            <select class="form-control" onchange="orientationChange(this.value)" name="position" id="position">
+                                <option value="0">top</option>
+                                <option value="100">Bottom</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <input id="curve-strength" oninput="strengthChange(this.value)" class="col-12" min="0" max="100" value="0" type="range" name="strength">
+                            <div class="row">
+                                <div class="col-8">
+                                    <label class="text-white" for="strength">Curve Strength</label>
+                                </div>
+                                <div id="strength-output" class="col-4 text-white text-end">0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <input id="curve-offset" oninput="offsetChange(this.value)" class="col-12" min="-100" max="100" value="0" type="range" name="offset">
+                            <div class="row">
+                                <div class="col-8">
+                                    <label class="text-white" for="offset">Curve offset</label>
+                                </div>
+                                <div id="offset-output" class="col-4 text-white text-end">0</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- css display -->
+                <div class="col-4 bg-danger" style="height: 30vh;">
+                    <div class="col-12 h-100">
+                        <button class="float-end mt-1" onclick="copyCss()">copy</button>
+                        <div class="css-text h-100 center">
+                            <p id="css-to-copy">
+                                wave-top {<br>
+                                    clip-path: ellipse(300% 100% at 50% 0%) <br>
+                                    background-color: #2F3031; <br>
+                                    width: 100%; <br>
+                                    height: 50%; <br>
+                                }
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    </body>
+</html>
