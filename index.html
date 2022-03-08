@@ -17,7 +17,7 @@
             <!-- curve display -->
             <div class="row">
                 <div class="col-12">
-                    <div class="curve-div" id="curve-division" style="background-color: antiquewhite;">
+                    <div class="curve-div" id="curve-division" style="background-color: #00ADB5;">
                         <div id="curve-element" class="curve-elm"></div>
                     </div>
                 </div>
@@ -26,14 +26,19 @@
             <!-- option and controls section  -->
             <div class="row">
                 <!-- controls -->
-                <div class="col-8 bg-dark" style="height: 30vh;">
+                <div class="col-8" style="height: 30vh; background-color: #393E46;">
                     <div class="row mt-3">
-                        <div class="col-12">
+                        <div class="col-6">
                             <label class="text-white form-label" for="position">Position</label>
-                            <select class="form-control" onchange="orientationChange(this.value)" name="position" id="position">
+                            <select class="form-select" onchange="orientationChange(this.value)" name="position" id="position">
                                 <option value="0">Top</option>
                                 <option value="100">Bottom</option>
                             </select>
+                        </div>
+                        <div class="col-6">
+                            <label class="text-white form-label" for="color-picker">Color</label>
+                            <br>
+                            <input type="color" class="color-picker" value="#222831" oninput="colorChange(this.value)" name="" id="">
                         </div>
                     </div>
                     <div class="row mt-3">
@@ -60,14 +65,14 @@
                     </div>
                 </div>
                 <!-- css display -->
-                <div class="col-4 bg-danger" style="height: 30vh;">
+                <div class="col-4" style="height: 30vh; background-color: #EEEEEE;">
                     <div class="col-12 h-100">
                         <button class="btn float-end mt-1" title="Copy" onclick="copyCss()"><i class="fa-solid fa-copy"></i></button>
                         <div class="css-text h-100 center">
                             <p id="css-to-copy">
                                 wave-top {<br>
                                     clip-path: ellipse(<span id="clipR">300</span>% <span id="clipP">100</span>% at 50% <span id="clipO">0</span>%) <br>
-                                    background-color: #2F3031; <br>
+                                    background-color: <span id="colorVal">#222831;</span> <br>
                                     width: 100%; <br>
                                     height: 50%; <br>
                                 }

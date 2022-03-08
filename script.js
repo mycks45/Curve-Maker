@@ -4,6 +4,7 @@ var shapePosition = 50
 var offsetValue = 0;
 var strengthValue = 0;
 var orient = 0
+var colorValue = "#2F3031"
 
 
 function strengthChange(strengthVal){
@@ -47,6 +48,7 @@ function setCurve(){
     document.getElementById('clipR').textContent = shapeRadius
     document.getElementById('clipP').textContent = shapePosition
     document.getElementById('clipO').textContent = orient
+    document.getElementById('colorVal').textContent = colorValue
 }
 
 function isFloat(n){
@@ -66,5 +68,11 @@ function orientationChange(val){
     }else{
         cssOr.style.placeItems = 'end'
     }
+    setCurve()
+}
+
+function colorChange(val){
+    colorValue = val
+    document.getElementById('curve-element').style.backgroundColor = val
     setCurve()
 }
