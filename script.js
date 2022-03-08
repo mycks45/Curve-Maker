@@ -43,15 +43,10 @@ function offsetChange(offsetVal){
 function setCurve(){
     document.getElementById('curve-element').style.clipPath =  `
         ellipse(${shapeRadius}% 100% at ${shapePosition}% ${orient}%)`
-        
-    document.getElementById('css-to-copy').innerHTML =  `
-    wave-top{<br>
-        clip-path: ellipse(${shapeRadius}% 100% at ${shapePosition}% ${orient}%) <br>
-        background-color: #2F3031; <br>
-        width: 100%; <br>
-        height: 50%; <br>
-    }
-    `;
+
+    document.getElementById('clipR').textContent = shapeRadius
+    document.getElementById('clipP').textContent = shapePosition
+    document.getElementById('clipO').textContent = orient
 }
 
 function isFloat(n){
